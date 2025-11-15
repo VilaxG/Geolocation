@@ -1,7 +1,7 @@
 # ============================
 # 1) BUILDER: compila el proyecto con Maven
 # ============================
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ RUN mvn clean package -DskipTests
 # ============================
 # 2) RUNTIME: imagen ligera
 # ============================
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
