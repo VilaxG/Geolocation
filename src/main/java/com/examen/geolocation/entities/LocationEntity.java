@@ -13,7 +13,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="ipTable", schema="public")
+@Table(name="ip_table", schema="public")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -30,12 +30,12 @@ public class LocationEntity {
     private String latitude;
     @Column(name = "longitude")
     private String longitude;
-    @Column(name = "countryCode")
+    @Column(name = "country_code")
     private String countryCode;
-    @Column(name = "countryName")
+    @Column(name = "country_name")
     private String countryName;
-    @Column(name = "phoneCode")
+    @Column(name = "phone_code")
     private String phoneCode;
-    @Column(name = "continentCode")
+    @Column(name = "continent_code")
     private String continentCode;
 }
