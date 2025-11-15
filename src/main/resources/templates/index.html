@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Leaflet (sin integrity porque CDNJS rompe los hashes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+    <div class="max-w-7xl h-full mx-auto mt-1 p-4 bg-white bg-white/70 backdrop-blur-xl">
+        <div>
+            <input id="inpIp" type="text" class="bg-white border w-1/3 p-1" placeholder="ingresa tu ip">
+            <input id="btnIp" type="button" class="border p-1 bg-gray-300 cursor-pointer"
+                value="Obtener Latitud y Longitud">
+        </div>
+
+        <div class="overflow-auto w-full">
+            <table id="ipTable" class="border">
+                <thead class="border-2 bg-black text-white">
+                    <tr>
+                        <th>#</th>
+                        <th>IP</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th>Código</th>
+                        <th>País</th>
+                        <th>Lada</th>
+                        <th>Region</th>
+                        <th>Pintar</th>
+                        <th>Eliminar <i class="ml-2 fa-regular fa-trash-can"></i></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="mapa" class="w-full h-[50vh]"></div>
+    </div>
+
+    <!-- jQuery LOCAL (primero SIEMPRE) -->
+    <script th:src="@{/jquery-3.7.1.min.js}"></script>
+
+    <!-- DataTables JS (después de jQuery) -->
+    <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind (solo para desarrollo, lo puedes dejar) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Script local -->
+    <script th:src="@{/scripts.js}"></script>
+
+</body>
+
+</html>
